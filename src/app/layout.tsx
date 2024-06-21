@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 
 import '@/shared/assets/styles/globals.css';
 import { MainLayout } from '@/components/layout';
+import { TanStackQueryProvider } from '@/providers';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +20,9 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body className={(inter.className, 'dark-theme')}>
-        <MainLayout content={children} />
+        <TanStackQueryProvider>
+          <MainLayout content={children} />
+        </TanStackQueryProvider>
       </body>
     </html>
   );

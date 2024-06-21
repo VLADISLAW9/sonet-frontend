@@ -1,11 +1,11 @@
-import { Logotype } from '@/components/ui/Logotype';
-import { VStack } from '@/components/ui/Stack';
 import { Typography } from '@/components/ui/Typography';
 import { cn } from '@/shared/lib/utils';
 import Link from 'next/link';
 import { memo } from 'react';
 import { getSidebarItems } from './selectors/getSidebarItems';
 import { Icon } from '@/components/ui/Icon';
+import { Logotype } from '@/components/ui/Logotype';
+import { VStack } from '@/components/ui/Stack';
 
 interface SidebarProps {
   className?: string;
@@ -17,7 +17,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   const sidebarItems = getSidebarItems();
 
   return (
-    <VStack gap='32' max className={cn('w-[15%] py-3', className)}>
+    <VStack gap='32' max className={cn('w-[20%] py-3', className)}>
       <Logotype />
       <VStack gap='16'>
         {sidebarItems.map((sidebarItem) => (

@@ -1,2 +1,3 @@
-export type { Mods } from './Mods/Mods';
-export type { MiddlewareFactory } from './MiddlewareFactory/MiddlewareFactory';
+export type { MiddlewareFactory } from './common/MiddlewareFactory/MiddlewareFactory';
+export type { Mods } from './common/Mods/Mods';
+export type { Post } from './Post/Post';
