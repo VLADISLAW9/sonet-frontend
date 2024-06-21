@@ -1,3 +1,1 @@
-export { Sidebar } from './Sidebar/Sidebar';
-
-export { DesktopLayout } from './DesktopLayout/DesktopLayout';
+export { MainLayout } from './MainLayout/MainLayout';

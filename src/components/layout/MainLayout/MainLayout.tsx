@@ -3,11 +3,11 @@ import { Sidebar } from '../Sidebar/Sidebar';
 import { Toolbar } from '../Toolbar/Toolbar';
 import { HStack } from '@/components/ui/Stack';
 
-interface DesktopLayoutProps {
+interface MainLayoutProps {
   content: ReactNode;
 }
 
-export const DesktopLayout = memo((props: DesktopLayoutProps) => {
+export const MainLayout = memo((props: MainLayoutProps) => {
   const { content } = props;
   return (
     <HStack align='start' max gap='32'>

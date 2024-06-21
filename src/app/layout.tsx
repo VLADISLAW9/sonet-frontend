@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@/shared/assets/styles/globals.css';
-import { DesktopLayout } from '@/components/layout';
+import { MainLayout } from '@/components/layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='ru'>
       <body className={(inter.className, 'dark-theme')}>
-        <DesktopLayout content={children} />
+        <MainLayout content={children} />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import { memo } from 'react';
 
-const Page = () => {
+const HomePage = () => {
   return <div>page</div>;
 };
 
-export default memo(Page);
+export default memo(HomePage);

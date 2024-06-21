@@ -5,6 +5,8 @@ module.exports = {
   overrides: [
     ...eslint.react.overrides,
     {
+      extends: ['plugin:@next/next/recommended'],
+      plugins: ['@next/eslint-plugin-next'],
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       settings: {
         atomPostfix: ''

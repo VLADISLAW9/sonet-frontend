@@ -1,1 +1,1 @@
-export type { Mods } from './Mods';
+export type { Mods } from './Mods/Mods';
