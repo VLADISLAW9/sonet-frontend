@@ -1,5 +1,5 @@
 import { getRouteHome } from '@/shared/consts/router';
-import { SidebarItem } from '../types/SidebarItem';
+import { SidebarItem } from '../../../Sidebar/types/SidebarItem/types/SidebarItem';
 
 import HomeIcon from '@/shared/assets/icons/home.svg';
 import UserIcon from '@/shared/assets/icons/user.svg';

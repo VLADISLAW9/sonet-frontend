@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import '@/shared/assets/styles/globals.css';
-import { MainLayout } from '@/components/layout';
-import { TanStackQueryProvider } from '@/providers';
+import { TanStackQueryProvider } from '@/components/providers';
+import { Layout } from '@/components/Layout';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang='ru'>
       <body className={(inter.className, 'dark-theme')}>
         <TanStackQueryProvider>
-          <MainLayout content={children} />
+          <Layout>{children}</Layout>
         </TanStackQueryProvider>
       </body>
     </html>

@@ -1,6 +1,10 @@
 import { cn } from '@/shared/lib/utils';
-import { VStack } from '@/components/ui/Stack';
+import { HStack, VStack } from '@/components/ui/Stack';
 import { memo } from 'react';
+import { Button } from '@/components/ui/Button';
+import { useRouter } from 'next/navigation';
+import { Typography } from '@/components/ui/Typography';
+import { getRouteSignIn } from '@/shared/consts/router';
 
 interface ToolbarProps {
   className?: string;
@@ -8,10 +12,18 @@ interface ToolbarProps {
 
 export const Toolbar = memo((props: ToolbarProps) => {
   const { className } = props;
+  const router = useRouter();
 
   return (
-    <VStack align='center' className={cn('w-[20%] py-3', className)}>
-      Toolbar
+    <VStack align='center' className={cn('w-[20%] py-5', className)}>
+      <HStack gap='16'>
+        <Button onClick={() => router.push(getRouteSignIn())}>
+          <Typography variant='typography14_regular'>Войти</Typography>
+        </Button>
+        <Button onClick={() => router.push(getRouteSignIn())} variant={'secondary'}>
+          <Typography variant='typography14_regular'>Зарегистрироваться</Typography>
+        </Button>
+      </HStack>
     </VStack>
   );
 });

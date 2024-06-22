@@ -1,3 +1,4 @@
+'use client';
 import { Typography } from '@/components/ui/Typography';
 import { cn } from '@/shared/lib/utils';
 import Link from 'next/link';
@@ -5,7 +6,9 @@ import { memo } from 'react';
 import { getSidebarItems } from './selectors/getSidebarItems';
 import { Icon } from '@/components/ui/Icon';
 import { Logotype } from '@/components/ui/Logotype';
-import { VStack } from '@/components/ui/Stack';
+import { HStack, VStack } from '@/components/ui/Stack';
+import { Button } from '@/components/ui/Button';
+import { useRouter } from 'next/navigation';
 
 interface SidebarProps {
   className?: string;
@@ -17,7 +20,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   const sidebarItems = getSidebarItems();
 
   return (
-    <VStack gap='32' max className={cn('w-[20%] py-3', className)}>
+    <VStack gap='32' max className={cn('w-[20%] py-3 min-h-screen static', className)}>
       <Logotype />
       <VStack gap='16'>
         {sidebarItems.map((sidebarItem) => (
