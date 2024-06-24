@@ -1,10 +1,11 @@
-import { cn } from '@/shared/lib/utils';
-import { HStack, VStack } from '@/components/ui/Stack';
 import { memo } from 'react';
-import { Button } from '@/components/ui/Button';
 import { useRouter } from 'next/navigation';
+
+import { Button } from '@/components/ui/Button';
+import { HStack, VStack } from '@/components/ui/Stack';
 import { Typography } from '@/components/ui/Typography';
 import { getRouteSignIn } from '@/shared/consts/router';
+import { cn } from '@/shared/lib/utils';
 
 interface ToolbarProps {
   className?: string;
@@ -20,7 +21,7 @@ export const Toolbar = memo((props: ToolbarProps) => {
         <Button onClick={() => router.push(getRouteSignIn())}>
           <Typography variant='typography14_regular'>Войти</Typography>
         </Button>
-        <Button onClick={() => router.push(getRouteSignIn())} variant={'secondary'}>
+        <Button onClick={() => router.push(getRouteSignIn())} variant='secondary'>
           <Typography variant='typography14_regular'>Зарегистрироваться</Typography>
         </Button>
       </HStack>

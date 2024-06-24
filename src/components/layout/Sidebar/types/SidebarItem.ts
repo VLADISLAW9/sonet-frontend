@@ -1,5 +1,7 @@
+import type React from 'react';
+
 export interface SidebarItem {
   path: string;
-  Icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  Icon: React.FC<React.SVGProps<SVGSVGElement>>;
   text: string;
 }

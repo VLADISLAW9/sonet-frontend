@@ -1,7 +1,10 @@
-import { ReactNode, memo } from 'react';
+import type { ReactNode } from 'react';
+import { memo } from 'react';
+
+import { HStack } from '@/components/ui/Stack';
+
 import { Sidebar } from '../Sidebar/Sidebar';
 import { Toolbar } from '../Toolbar/Toolbar';
-import { HStack } from '@/components/ui/Stack';
 
 interface MainLayoutProps {
   children: ReactNode;

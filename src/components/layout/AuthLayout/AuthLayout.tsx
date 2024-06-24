@@ -1,7 +1,7 @@
-import { ReactNode, memo } from 'react';
-import { Sidebar } from '../Sidebar/Sidebar';
-import { Toolbar } from '../Toolbar/Toolbar';
-import { HStack, VStack } from '@/components/ui/Stack';
+import type { ReactNode } from 'react';
+import { memo } from 'react';
+
+import { VStack } from '@/components/ui/Stack';
 
 interface AuthLayoutProps {
   children: ReactNode;

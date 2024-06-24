@@ -1,16 +1,11 @@
 import * as React from 'react';
-import * as LabelPrimitive from '@radix-ui/react-label';
+import type { ControllerProps, FieldPath, FieldValues } from 'react-hook-form';
+import { Controller, FormProvider, useFormContext } from 'react-hook-form';
+import type * as LabelPrimitive from '@radix-ui/react-label';
 import { Slot } from '@radix-ui/react-slot';
-import {
-  Controller,
-  ControllerProps,
-  FieldPath,
-  FieldValues,
-  FormProvider,
-  useFormContext
-} from 'react-hook-form';
 
 import { cn } from '@/shared/lib/utils';
+
 import { Label } from '../Label';
 
 const Form = FormProvider;
@@ -31,6 +26,7 @@ const FormField = <
   ...props
 }: ControllerProps<TFieldValues, TName>) => {
   return (
+    // eslint-disable-next-line react/jsx-no-constructed-context-values
     <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
     </FormFieldContext.Provider>
@@ -39,6 +35,7 @@ const FormField = <
 
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
+  // eslint-disable-next-line @typescript-eslint/no-use-before-define
   const itemContext = React.useContext(FormItemContext);
   const { getFieldState, formState } = useFormContext();
 
@@ -71,6 +68,7 @@ const FormItem = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivEl
     const id = React.useId();
 
     return (
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       <FormItemContext.Provider value={{ id }}>
         <div ref={ref} className={cn('space-y-2', className)} {...props} />
       </FormItemContext.Provider>
@@ -156,12 +154,12 @@ const FormMessage = React.forwardRef<
 FormMessage.displayName = 'FormMessage';
 
 export {
-  useFormField,
   Form,
-  FormItem,
-  FormLabel,
   FormControl,
   FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
   FormMessage,
-  FormField
+  useFormField
 };

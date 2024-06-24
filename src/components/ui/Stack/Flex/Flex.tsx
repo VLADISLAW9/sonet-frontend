@@ -1,7 +1,7 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
 import { cn } from '@/shared/lib/utils';
-import { Mods } from '@/shared/types';
+import type { Mods } from '@/shared/types';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';

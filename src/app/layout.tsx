@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
-import '@/shared/assets/styles/globals.css';
-import { TanStackQueryProvider } from '@/components/providers';
 import { Layout } from '@/components/Layout';
+import { TanStackQueryProvider } from '@/components/providers';
+
+import '@/shared/assets/styles/globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -12,11 +13,11 @@ export const metadata: Metadata = {
   description: 'Social Network'
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang='ru'>
       <body className={(inter.className, 'dark-theme')}>
@@ -26,4 +27,6 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

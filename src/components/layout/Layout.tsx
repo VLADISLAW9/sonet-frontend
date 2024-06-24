@@ -1,10 +1,10 @@
 'use client';
+
+import type { ReactNode } from 'react';
 import { usePathname } from 'next/navigation';
-import { ReactNode } from 'react';
-import { HStack } from '../ui/Stack';
-import { Sidebar } from './Sidebar/Sidebar';
-import { Toolbar } from './Toolbar/Toolbar';
+
 import { getRouteSignIn } from '@/shared/consts/router';
+
 import { AuthLayout } from './AuthLayout/AuthLayout';
 import { MainLayout } from './MainLayout/MainLayout';
 
@@ -19,7 +19,6 @@ export const Layout = (props: LayoutProps) => {
 
   if (pathname === getRouteSignIn()) {
     return <AuthLayout>{children}</AuthLayout>;
-  } else {
-    return <MainLayout>{children}</MainLayout>;
   }
+  return <MainLayout>{children}</MainLayout>;
 };

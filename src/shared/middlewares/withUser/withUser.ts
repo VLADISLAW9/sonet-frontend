@@ -1,10 +1,12 @@
+import type { NextFetchEvent, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+
 import { getRouteProfile } from '@/shared/consts/router';
-import { MiddlewareFactory } from '@/shared/types';
-import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
+import type { MiddlewareFactory } from '@/shared/types';
 
 export const withUser: MiddlewareFactory = (next) => {
   return async (request: NextRequest, _next: NextFetchEvent) => {
-    const pathname = request.nextUrl.pathname;
+    const { pathname } = request.nextUrl;
 
     const authOnlyUrls = [getRouteProfile()];
 

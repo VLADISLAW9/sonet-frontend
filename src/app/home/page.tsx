@@ -1,8 +1,11 @@
 'use client';
+
 import { memo } from 'react';
-import { useGetPostsList } from './lib/hooks/useGetPostsList';
-import { PostsList } from '@/components/PostsList';
+
+import { PostsList } from '@/app/home/components/PostsList';
 import { VStack } from '@/components/ui/Stack';
+
+import { useGetPostsList } from './lib/hooks/useGetPostsList';
 
 const HomePage = () => {
   const { data: posts, isPending, isError } = useGetPostsList();

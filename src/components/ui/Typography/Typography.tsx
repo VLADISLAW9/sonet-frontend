@@ -1,6 +1,5 @@
-import { Mods } from '@/shared/types';
-import cls from './Typography.module.scss';
 import { cn } from '@/shared/lib/utils';
+import type { Mods } from '@/shared/types';
 
 type TypographyVariant =
   // Regular

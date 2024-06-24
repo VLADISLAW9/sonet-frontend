@@ -1,1 +1,0 @@
-export { PostsListItem } from './PostsListItem';

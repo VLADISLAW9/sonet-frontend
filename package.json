@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start:dev": "next dev",
+    "json-server": "node ./json-server/index.js",
     "build:prod": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -40,6 +41,7 @@
     "@vladislaw9/prettier": "^1.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "json-server": "^1.0.0-beta.1",
     "lint-staged": "^15.2.7",
     "postcss": "^8",
     "prettier": "3.3.2",

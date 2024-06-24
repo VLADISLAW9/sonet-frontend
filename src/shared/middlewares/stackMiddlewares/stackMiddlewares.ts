@@ -1,5 +1,7 @@
-import { MiddlewareFactory } from '@/shared/types';
-import { NextMiddleware, NextResponse } from 'next/server';
+import type { NextMiddleware } from 'next/server';
+import { NextResponse } from 'next/server';
+
+import type { MiddlewareFactory } from '@/shared/types';
 
 export function stackMiddlewares(functions: MiddlewareFactory[] = [], index = 0): NextMiddleware {
   const current = functions[index];

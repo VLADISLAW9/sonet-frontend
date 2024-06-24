@@ -1,14 +1,15 @@
 'use client';
-import { Typography } from '@/components/ui/Typography';
-import { cn } from '@/shared/lib/utils';
-import Link from 'next/link';
+
 import { memo } from 'react';
-import { getSidebarItems } from './selectors/getSidebarItems';
+import Link from 'next/link';
+
 import { Icon } from '@/components/ui/Icon';
 import { Logotype } from '@/components/ui/Logotype';
-import { HStack, VStack } from '@/components/ui/Stack';
-import { Button } from '@/components/ui/Button';
-import { useRouter } from 'next/navigation';
+import { VStack } from '@/components/ui/Stack';
+import { Typography } from '@/components/ui/Typography';
+import { cn } from '@/shared/lib/utils';
+
+import { getSidebarItems } from './selectors/getSidebarItems';
 
 interface SidebarProps {
   className?: string;
