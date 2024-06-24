@@ -1,6 +1,7 @@
 import HomeIcon from '@/shared/assets/icons/home.svg';
+import PeopleIcon from '@/shared/assets/icons/people.svg';
 import UserIcon from '@/shared/assets/icons/user.svg';
-import { getRouteHome } from '@/shared/consts/router';
+import { getRouteClubs, getRouteHome } from '@/shared/consts/router';
 
 import type { SidebarItem } from '../types/SidebarItem';
 
@@ -12,6 +13,11 @@ export const getSidebarItems = () => {
       path: getRouteHome(),
       Icon: HomeIcon,
       text: 'Главная'
+    },
+    {
+      path: getRouteClubs(),
+      Icon: PeopleIcon,
+      text: 'Клубы'
     }
   ];
 

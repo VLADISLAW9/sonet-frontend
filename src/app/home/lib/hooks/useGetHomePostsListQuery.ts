@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { getPosts } from '@/shared/api/requests/post';
 
-export const useGetPostsList = () =>
+export const useGetHomePostsListQuery = () =>
   useQuery({
     queryKey: ['posts'],
     queryFn: async () => {

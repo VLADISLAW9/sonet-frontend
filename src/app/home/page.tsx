@@ -2,13 +2,13 @@
 
 import { memo } from 'react';
 
-import { PostsList } from '@/app/home/components/PostsList';
+import { PostsList } from '@/components/PostsList';
 import { VStack } from '@/components/ui/Stack';
 
-import { useGetPostsList } from './lib/hooks/useGetPostsList';
+import { useGetHomePostsListQuery } from './lib/hooks/useGetHomePostsListQuery';
 
 const HomePage = () => {
-  const { data: posts, isPending, isError } = useGetPostsList();
+  const { data: posts, isPending, isError } = useGetHomePostsListQuery();
 
   if (isPending) {
     return <VStack>Loading...</VStack>;

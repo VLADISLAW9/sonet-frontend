@@ -58,7 +58,7 @@ export const Flex = (props: FlexProps) => {
     align = 'center',
     direction = 'row',
     wrap = 'nowrap',
-    gap = '4',
+    gap = '0',
     max,
     ...otherProps
   } = props;
