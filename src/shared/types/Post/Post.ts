@@ -1,12 +1,13 @@
 export interface Post {
-  id: number;
+  dateOfCreation: string;
+  description: string;
   title: string;
-  body: string;
-  tags: string[];
-  reactions: {
-    likes: number;
-    dislikes: number;
-  };
   views: number;
-  userId: number;
+  likes: number;
+  reposts: number;
+  club: null;
+  clubId: null;
+  user: null;
+  userId: null;
+  id: string;
 }

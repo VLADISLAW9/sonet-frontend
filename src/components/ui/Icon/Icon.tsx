@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { cn } from '@/shared/lib/utils';
-
 type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>;
 
 interface IconBaseProps extends SvgProps {
@@ -24,13 +22,7 @@ export const Icon = (props: IconProps) => {
   const { className, Svg, width = 32, height = 32, clickable, ...otherProps } = props;
 
   const icon = (
-    <Svg
-      className={cn('text-accent', className)}
-      width={width}
-      height={height}
-      {...otherProps}
-      onClick={undefined}
-    />
+    <Svg className={className} width={width} height={height} {...otherProps} onClick={undefined} />
   );
 
   if (clickable) {

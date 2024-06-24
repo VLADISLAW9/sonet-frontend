@@ -73,10 +73,8 @@ export const Flex = (props: FlexProps) => {
   ];
 
   const mods: Mods = {
-    'w-100': max
+    'w-full': max
   };
-
-  console.log(mods);
 
   return (
     <div className={cn('flex', mods, classes)} {...otherProps}>
