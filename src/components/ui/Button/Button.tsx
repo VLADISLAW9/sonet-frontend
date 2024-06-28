@@ -1,7 +1,10 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { cva, type VariantProps } from 'class-variance-authority';
+import { Loader2 } from 'lucide-react';
 
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/Tooltip';
+import { Typography } from '@/components/ui/Typography';
 import { cn } from '@/shared/lib/utils';
 
 const buttonVariants = cva(
@@ -34,11 +37,44 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  tooltip?: string;
+  loading?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ loading, tooltip, className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : 'button';
+
+    if (tooltip) {
+      return (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Comp
+                className={cn(buttonVariants({ variant, size, className }))}
+                ref={ref}
+                {...props}
+              />
+            </TooltipTrigger>
+            <TooltipContent>
+              <Typography variant='typography16_regular'>{tooltip}</Typography>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      );
+    }
+
+    if (loading) {
+      const { children } = props;
+
+      return (
+        <Button disabled>
+          <Loader2 className='mr-2 h-4 w-4 animate-spin' />
+          {children}
+        </Button>
+      );
+    }
+
     return (
       <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
     );

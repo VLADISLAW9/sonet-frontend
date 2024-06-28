@@ -20,7 +20,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='ru'>
-      <body className={(inter.className, 'dark-theme')}>
+      <body className={inter.className}>
         <TanStackQueryProvider>
           <Layout>{children}</Layout>
         </TanStackQueryProvider>

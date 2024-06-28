@@ -21,8 +21,13 @@ export const Sidebar = memo((props: SidebarProps) => {
   const sidebarItems = getSidebarItems();
 
   return (
-    <VStack gap='32' max className={cn('w-[20%] py-3 min-h-screen static', className)}>
-      <Logotype />
+    <VStack
+      gap='32'
+      align='center'
+      max
+      className={cn('w-[20%] py-2 min-h-screen top-0 sticky', className)}
+    >
+      <Logotype className='w-14 h-14' />
       <VStack gap='16'>
         {sidebarItems.map((sidebarItem) => (
           <Link className='flex items-center gap-2' href={sidebarItem.path} key={sidebarItem.path}>

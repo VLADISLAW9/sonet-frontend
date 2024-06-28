@@ -17,6 +17,9 @@ const config: Config = {
       }
     },
     extend: {
+      zIndex: {
+        pageHeader: 'var(--z-page-header)'
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
