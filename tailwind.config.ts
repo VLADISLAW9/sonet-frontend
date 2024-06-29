@@ -21,6 +21,7 @@ const config: Config = {
         pageHeader: 'var(--z-page-header)'
       },
       colors: {
+        error: 'var(--error-color)',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
@@ -76,6 +77,7 @@ const config: Config = {
       }
     }
   },
+  // eslint-disable-next-line global-require
   plugins: [require('tailwindcss-animate')]
 };
 export default config;

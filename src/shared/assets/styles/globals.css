@@ -1,5 +1,6 @@
 @import url("themes.css");
 @import url("z-index.css");
+@import url("colors.css");
 
 
 @tailwind components;

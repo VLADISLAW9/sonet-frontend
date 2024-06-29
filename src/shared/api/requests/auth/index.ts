@@ -2,10 +2,9 @@ import type { User } from '@/shared/types';
 
 import { api } from '../../instance';
 
-export type RegisterParams = Omit<
-  User,
-  'passwordHash' | 'id' | 'dateOfCreation' | 'coins' | 'rating'
->;
+export interface RegisterParams extends Omit<User, 'id' | 'dateOfCreation' | 'coins' | 'rating'> {
+  password: string;
+}
 export type RegisterConfig = AxiosRequestConfig<RegisterParams>;
 
 export const register = async ({ params, config }: RegisterConfig) =>

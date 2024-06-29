@@ -1,5 +1,7 @@
-import LogoSvg from '@/shared/assets/images/sonet-logo-purple.svg';
-import { cn } from '@/shared/lib/utils';
+import Link from 'next/link';
+
+import LogoSvg from '@/shared/assets/images/sonet-logo-black.svg';
+import { getRouteHome } from '@/shared/consts/router';
 
 interface LogotypeProps {
   className?: string;
@@ -7,5 +9,9 @@ interface LogotypeProps {
 
 export const Logotype = (props: LogotypeProps) => {
   const { className } = props;
-  return <LogoSvg className={className} />;
+  return (
+    <Link href={getRouteHome()}>
+      <LogoSvg className={className} />
+    </Link>
+  );
 };

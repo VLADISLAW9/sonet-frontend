@@ -2,21 +2,22 @@
 
 import type { UseFormReturn } from 'react-hook-form';
 
-import type { SignInSchema } from '@/app/(auth)/login/lib/schemas/signInSchema';
+import type { LoginSchema } from '@/app/(auth)/login/lib/schemas/loginSchema';
 import { Button } from '@/components/ui/Button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/Form';
 import { Input } from '@/components/ui/Input';
 import { VStack } from '@/components/ui/Stack';
 import { Typography } from '@/components/ui/Typography';
 
-interface SignInFormProps {
+interface LoginFormProps {
   onSubmit: () => void;
-  form: UseFormReturn<SignInSchema, any, undefined>;
+  form: UseFormReturn<LoginSchema, any, undefined>;
   isLoading?: boolean;
+  error?: string;
 }
 
-export const LoginForm = (props: SignInFormProps) => {
-  const { form, onSubmit, isLoading } = props;
+export const LoginForm = (props: LoginFormProps) => {
+  const { form, onSubmit, isLoading, error } = props;
 
   return (
     <Form {...form}>
@@ -29,7 +30,13 @@ export const LoginForm = (props: SignInFormProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder='Email' {...field} />
+                    <Input
+                      type='email'
+                      disabled={isLoading}
+                      isError={!!error}
+                      placeholder='Email'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -41,12 +48,23 @@ export const LoginForm = (props: SignInFormProps) => {
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input placeholder='Пароль' type='password' {...field} />
+                    <Input
+                      disabled={isLoading}
+                      isError={!!error}
+                      placeholder='Пароль'
+                      type='password'
+                      {...field}
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
+            {error && (
+              <Typography className='text-error' variant='typography14_medium'>
+                {error}
+              </Typography>
+            )}
           </VStack>
           <Button loading={isLoading} type='submit'>
             <Typography variant='typography14_regular'>Войти</Typography>

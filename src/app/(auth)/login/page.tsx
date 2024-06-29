@@ -3,18 +3,23 @@
 import { memo } from 'react';
 
 import { Card, CardContent, CardHeader } from '@/components/ui/Card';
+import { Logotype } from '@/components/ui/Logotype';
+import { Typography } from '@/components/ui/Typography';
 
 import { LoginForm } from './components/LoginForm';
 import { useLoginForm } from './lib/hooks/useLoginForm';
 
 const LoginPage = () => {
-  const { onSubmit, form, isLoading } = useLoginForm();
+  const { onSubmit, form, isLoading, error } = useLoginForm();
 
   return (
     <Card>
-      <CardHeader>Вход</CardHeader>
+      <CardHeader>
+        <Logotype className='w-14 h-14 m-auto' />
+        <Typography variant='typography20_medium'>Вход</Typography>
+      </CardHeader>
       <CardContent>
-        <LoginForm isLoading={isLoading} onSubmit={onSubmit} form={form} />
+        <LoginForm error={error} isLoading={isLoading} onSubmit={onSubmit} form={form} />
       </CardContent>
     </Card>
   );
