@@ -9,7 +9,7 @@ import { getRouteHome } from '@/shared/consts/router';
 import type { LoginSchema } from '../consts/loginSchema';
 import { loginSchema } from '../consts/loginSchema';
 
-export const useLoginForm = () => {
+export const useLoginPage = () => {
   const router = useRouter();
   const loginMutation = useLoginMutation();
 
@@ -29,17 +29,25 @@ export const useLoginForm = () => {
       }
     });
 
-    if (loginMutationResponse.status !== 200 && typeof loginMutationResponse.data === 'string') {
-      return setError(loginMutationResponse?.data);
+    if (loginMutationResponse.status !== 200) {
+      return setError(
+        typeof loginMutationResponse.data === 'string'
+          ? loginMutationResponse.data
+          : 'Произошла непредвиденная ошибка'
+      );
     }
 
     router.push(getRouteHome());
   });
 
   return {
-    form: loginForm,
-    isLoading: loginForm.formState.isSubmitting,
-    onSubmit,
-    error
+    state: {
+      error,
+      isLoading: loginForm.formState.isSubmitting
+    },
+    functions: {
+      onSubmit
+    },
+    form: loginForm
   };
 };

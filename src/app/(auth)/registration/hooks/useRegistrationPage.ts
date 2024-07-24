@@ -8,7 +8,7 @@ import { registrationSchema } from '@/app/(auth)/registration/consts/registratio
 import { useRegistrationMutation } from '@/shared/api/hooks/useRegistrationMutation';
 import { getRouteLogin } from '@/shared/consts/router';
 
-export const useRegistrationForm = () => {
+export const useRegistrationPage = () => {
   const registrationForm = useForm<RegistrationSchema>({
     resolver: zodResolver(registrationSchema)
   });
@@ -42,8 +42,12 @@ export const useRegistrationForm = () => {
 
   return {
     form: registrationForm,
-    isLoading: registrationForm.formState.isSubmitting,
-    onSubmit,
-    error
+    state: {
+      error,
+      isLoading: registrationForm.formState.isSubmitting
+    },
+    functions: {
+      onSubmit
+    }
   };
 };

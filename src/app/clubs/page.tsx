@@ -2,23 +2,23 @@
 
 import { memo } from 'react';
 
+import { useClubsPage } from '@/app/clubs/hooks/useClubsPage';
 import { PostsList } from '@/components/PostsList';
 import { Page } from '@/components/ui/Page';
-import { useGetClubsPostsListQuery } from '@/shared/api/hooks/useGetClubsPostsListQuery';
 
 import { ClubsPageHeader } from './components/ClubsPageHeader';
 
 const ClubsPage = () => {
-  const { data: posts, isPending, isError } = useGetClubsPostsListQuery();
+  const { state } = useClubsPage();
 
-  if (isPending)
+  if (state.isLoading)
     return (
       <Page header={<ClubsPageHeader />}>
         <p>Loading...</p>
       </Page>
     );
 
-  if (isError)
+  if (state.isError || !state.posts)
     return (
       <Page header={<ClubsPageHeader />}>
         <p>Error</p>
@@ -27,7 +27,7 @@ const ClubsPage = () => {
 
   return (
     <Page header={<ClubsPageHeader />}>
-      <PostsList posts={posts} />
+      <PostsList posts={state.posts} />
     </Page>
   );
 };

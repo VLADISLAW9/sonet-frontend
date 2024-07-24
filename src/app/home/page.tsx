@@ -2,24 +2,24 @@
 
 import { memo } from 'react';
 
+import { useHomePage } from '@/app/home/hooks/useHomePage';
 import { PostsList } from '@/components/PostsList';
 import { VStack } from '@/components/ui/Stack';
-import { useGetHomePostsListQuery } from '@/shared/api/hooks/useGetHomePostsListQuery';
 
 const HomePage = () => {
-  const { data: posts, isPending, isError } = useGetHomePostsListQuery();
+  const { state } = useHomePage();
 
-  if (isPending) {
+  if (state.isLoading) {
     return <VStack>Loading...</VStack>;
   }
 
-  if (isError) {
+  if (state.isError || !state.posts) {
     return <VStack>Error</VStack>;
   }
 
   return (
     <VStack>
-      <PostsList posts={posts} />
+      <PostsList posts={state.posts} />
     </VStack>
   );
 };
