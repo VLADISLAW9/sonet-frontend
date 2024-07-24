@@ -8,7 +8,7 @@ import { Input } from '@/components/ui/Input';
 import { VStack } from '@/components/ui/Stack';
 import { Typography } from '@/components/ui/Typography';
 
-import type { RegistrationSchema } from '../../lib/schemas/registrationSchema';
+import type { RegistrationSchema } from '../../consts/registrationSchema';
 
 interface RegistrationFormProps {
   onSubmit: () => void;

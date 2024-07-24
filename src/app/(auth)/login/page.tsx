@@ -7,7 +7,7 @@ import { Logotype } from '@/components/ui/Logotype';
 import { Typography } from '@/components/ui/Typography';
 
 import { LoginForm } from './components/LoginForm';
-import { useLoginForm } from './lib/hooks/useLoginForm';
+import { useLoginForm } from './hooks/useLoginForm';
 
 const LoginPage = () => {
   const { onSubmit, form, isLoading, error } = useLoginForm();

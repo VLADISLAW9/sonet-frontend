@@ -3,12 +3,11 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 
+import { useLoginMutation } from '@/shared/api/hooks/useLoginMutation';
 import { getRouteHome } from '@/shared/consts/router';
 
-import type { LoginSchema } from '../schemas/loginSchema';
-import { loginSchema } from '../schemas/loginSchema';
-
-import { useLoginMutation } from './useLoginMutation';
+import type { LoginSchema } from '../consts/loginSchema';
+import { loginSchema } from '../consts/loginSchema';
 
 export const useLoginForm = () => {
   const router = useRouter();

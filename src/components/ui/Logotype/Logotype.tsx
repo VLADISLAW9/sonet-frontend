@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import LogoSvg from '@/shared/assets/images/sonet-logo-black.svg';
+import LogoSvg from '@/shared/assets/images/sonet-logo-purple.svg';
 import { getRouteHome } from '@/shared/consts/router';
 
 interface LogotypeProps {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import { Layout } from '@/components/Layout';
-import { TanStackQueryProvider } from '@/components/providers';
+import { TanStackQueryProvider } from '@/components/providers/TanStackQueryProviders';
 
 import '@/shared/assets/styles/globals.css';
 
@@ -20,7 +20,7 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang='ru'>
-      <body className={(inter.className, 'white')}>
+      <body className={inter.className}>
         <TanStackQueryProvider>
           <Layout>{children}</Layout>
         </TanStackQueryProvider>

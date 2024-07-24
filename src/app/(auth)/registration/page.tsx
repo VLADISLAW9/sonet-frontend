@@ -7,7 +7,7 @@ import { Logotype } from '@/components/ui/Logotype';
 import { Typography } from '@/components/ui/Typography';
 
 import { RegistrationForm } from './components/RegistrationForm/RegistrationForm';
-import { useRegistrationForm } from './lib/hooks/useRegistrationForm';
+import { useRegistrationForm } from './hooks/useRegistrationForm';
 
 const RegistrationPage = () => {
   const { form, isLoading, onSubmit, error } = useRegistrationForm();

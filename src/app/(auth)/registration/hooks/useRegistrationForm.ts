@@ -1,18 +1,14 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
+import type { RegistrationSchema } from '@/app/(auth)/registration/consts/registrationSchema';
+import { registrationSchema } from '@/app/(auth)/registration/consts/registrationSchema';
+import { useRegistrationMutation } from '@/shared/api/hooks/useRegistrationMutation';
 import { getRouteLogin } from '@/shared/consts/router';
 
-import type { RegistrationSchema } from '../schemas/registrationSchema';
-import { registrationSchema } from '../schemas/registrationSchema';
-
-import { useRegistrationMutation } from './useRegistrationMutation';
-
 export const useRegistrationForm = () => {
-  const router = useRouter();
-
   const registrationForm = useForm<RegistrationSchema>({
     resolver: zodResolver(registrationSchema)
   });
@@ -41,7 +37,7 @@ export const useRegistrationForm = () => {
       setError(registrationMutationResponse.data);
     }
 
-    router.push(getRouteLogin());
+    redirect(getRouteLogin());
   });
 
   return {

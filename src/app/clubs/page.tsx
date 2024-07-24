@@ -4,9 +4,9 @@ import { memo } from 'react';
 
 import { PostsList } from '@/components/PostsList';
 import { Page } from '@/components/ui/Page';
+import { useGetClubsPostsListQuery } from '@/shared/api/hooks/useGetClubsPostsListQuery';
 
 import { ClubsPageHeader } from './components/ClubsPageHeader';
-import { useGetClubsPostsListQuery } from './lib/hooks/useGetClubsPostsListQuery';
 
 const ClubsPage = () => {
   const { data: posts, isPending, isError } = useGetClubsPostsListQuery();

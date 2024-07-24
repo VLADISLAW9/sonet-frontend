@@ -4,8 +4,7 @@ import { memo } from 'react';
 
 import { PostsList } from '@/components/PostsList';
 import { VStack } from '@/components/ui/Stack';
-
-import { useGetHomePostsListQuery } from './lib/hooks/useGetHomePostsListQuery';
+import { useGetHomePostsListQuery } from '@/shared/api/hooks/useGetHomePostsListQuery';
 
 const HomePage = () => {
   const { data: posts, isPending, isError } = useGetHomePostsListQuery();

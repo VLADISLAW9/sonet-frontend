@@ -2,7 +2,7 @@
 
 import type { UseFormReturn } from 'react-hook-form';
 
-import type { LoginSchema } from '@/app/(auth)/login/lib/schemas/loginSchema';
+import type { LoginSchema } from '@/app/(auth)/login/consts/loginSchema';
 import { Button } from '@/components/ui/Button';
 import { Form, FormControl, FormField, FormItem, FormMessage } from '@/components/ui/Form';
 import { Input } from '@/components/ui/Input';
