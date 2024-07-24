@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button';
 import { HStack, VStack } from '@/components/ui/Stack';
 import { Typography } from '@/components/ui/Typography';
 import { getRouteLogin, getRouteRegistration } from '@/shared/consts/router';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/cn';
 
 interface ToolbarProps {
   className?: string;

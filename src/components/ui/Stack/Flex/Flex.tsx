@@ -1,7 +1,6 @@
 import type { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 
-import { cn } from '@/shared/lib/utils';
-import type { Mods } from '@/shared/types';
+import { cn } from '@/shared/utils/cn';
 
 export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
@@ -72,12 +71,17 @@ export const Flex = (props: FlexProps) => {
     gap && gapClasses[gap]
   ];
 
-  const mods: Mods = {
-    'w-full': max
-  };
-
   return (
-    <div className={cn('flex', mods, classes)} {...otherProps}>
+    <div
+      className={cn(
+        'flex',
+        {
+          'w-full': max
+        },
+        classes
+      )}
+      {...otherProps}
+    >
       {children}
     </div>
   );

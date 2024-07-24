@@ -4,6 +4,6 @@ import 'moment/locale/ru';
 
 moment.locale('ru');
 
-export function convertDate(inp: string, format: string) {
+export const convertDate = (inp: string, format: string) => {
   return moment(inp).format(format);
-}
+};

@@ -7,7 +7,7 @@ import { Icon } from '@/components/ui/Icon';
 import { Logotype } from '@/components/ui/Logotype';
 import { VStack } from '@/components/ui/Stack';
 import { Typography } from '@/components/ui/Typography';
-import { cn } from '@/shared/lib/utils';
+import { cn } from '@/shared/utils/cn';
 
 import { getSidebarItems } from './selectors/getSidebarItems';
 

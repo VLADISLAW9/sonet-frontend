@@ -7,9 +7,9 @@ import { Typography } from '@/components/ui/Typography';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import LikeSvg from '@/shared/assets/icons/like.svg';
 import RepostSvg from '@/shared/assets/icons/repost.svg';
-import { cn } from '@/shared/lib/utils';
-import { convertDate } from '@/shared/lib/utils/convertDate/convertDate';
 import type { Post } from '@/shared/types';
+import { cn } from '@/shared/utils/cn';
+import { convertDate } from '@/shared/utils/convertDate/convertDate';
 
 interface PostsListItemProps {
   className?: string;

@@ -1,5 +1,4 @@
-import { cn } from '@/shared/lib/utils';
-import type { Mods } from '@/shared/types';
+import { cn } from '@/shared/utils/cn';
 
 type TypographyVariant =
   // Regular
@@ -76,14 +75,18 @@ export const Typography = <Tag extends TypographyTag = 'div'>(props: TypographyP
 
   const Component = tag;
 
-  const mods: Mods = {
-    'cursor-pointer': clickable
-  };
-
   const classes = [className, variantClasses[variant]];
 
   return (
-    <Component className={cn(mods, classes)} {...otherProps}>
+    <Component
+      className={cn(
+        {
+          'cursor-pointer': clickable
+        },
+        classes
+      )}
+      {...otherProps}
+    >
       {children}
     </Component>
   );
